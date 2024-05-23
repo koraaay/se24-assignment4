@@ -57,6 +57,23 @@ public class CucumberDoublyLinkedListSteps {
         logger.info("%s not implemented yet.".formatted(Thread.currentThread().getStackTrace()[1].getMethodName()));
     }
 
+    @When("I insert {double} into the list")
+    public void iInsertIntoTheList(double value) {
+        this.value = value;
+        list.insert(value);
+    }
+
+    @When("I insert {double}, {double}, and {double} into the list")
+    public void iInsertAndIntoTheList(double value1, double value2, double value3) {
+        this.value = value1;
+        list.insert(value);
+        this.value = value2;
+        list.insert(value);
+        this.value = value3;
+        list.insert(value);
+    }
+
+
     // Then -----------------------------------------------------------------------
 
     @Then("^the list should contain that element$")
